@@ -1,25 +1,21 @@
 import java.util.Scanner;
 
-public class Main{
-    
-    public static void main(String [] args){
+public class Main {
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        boolean[] list = new boolean[30];
-        int count = 0;
+        boolean[] submitted = new boolean[30];
         
-        while(count < 28){
-            int student = sc.nextInt();
-            list[student -1] = true;
-            count++;
+        for (int i = 0; i < 28; i++) {
+            int studentNumber = sc.nextInt();
+            submitted[studentNumber - 1] = true;
         }
         
-        int i = 0;
-        while(i < 30){
-            if(!list[i]){
+        for (int i = 0; i < 30; i++) {
+            if (!submitted[i]) {
                 System.out.println(i + 1);
             }
-            i++;
         }
     }
 }
