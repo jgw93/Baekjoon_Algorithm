@@ -8,6 +8,7 @@ public class Main{
         int N = sc.nextInt();
         double[] score = new double[N];
         double maxScore = 0;
+        double sum = 0;
         
         for(int i = 0; i < N; i++){
             score[i] = sc.nextDouble();
@@ -16,11 +17,8 @@ public class Main{
             }
         }
         
-        double sum = 0;
-        
         for(int i = 0; i < N; i++){
-            score[i] = (score[i] / maxScore) * 100;
-            sum += score[i];
+            sum += (score[i] / maxScore) * 100;
         }
         System.out.println(sum / N);
     }
