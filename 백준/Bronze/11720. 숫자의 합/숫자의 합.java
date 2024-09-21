@@ -1,17 +1,21 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main{
+public class Main {
     
-    public static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        int N = sc.nextInt();
-        String numbers = sc.next();
+        int N = Integer.parseInt(br.readLine());
+        String numbers = br.readLine();
+        
         int sum = 0;
         
-        for(int i = 0; i < N; i++){
+        for (int i = 0; i < N; i++) {
             sum += numbers.charAt(i) - '0';
         }
+        
         System.out.println(sum);
     }
 }
