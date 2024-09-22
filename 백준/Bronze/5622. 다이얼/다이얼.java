@@ -1,28 +1,29 @@
 import java.util.Scanner;
 
-public class Main{
-    
-    public static void main(String[] args){
+public class Main {
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
+        int[] dialTime = {
+            3, 3, 3,
+            4, 4, 4,
+            5, 5, 5,
+            6, 6, 6,
+            7, 7, 7,
+            8, 8, 8, 8,
+            9, 9, 9,
+            10, 10, 10, 10
+        };
+
         String S = sc.next();
-        int time = 0;
-        
-        for(int i = 0; i < S.length(); i++){
+        int totalTime = 0;
+
+        for (int i = 0; i < S.length(); i++) {
             char c = S.charAt(i);
-            time += getTime(c);
+            totalTime += dialTime[c - 'A'];
         }
-        System.out.println(time);
-    }
-    public static int getTime(char c) {
-        if (c >= 'A' && c <= 'C') return 3;
-        else if (c >= 'D' && c <= 'F') return 4;
-        else if (c >= 'G' && c <= 'I') return 5;
-        else if (c >= 'J' && c <= 'L') return 6;
-        else if (c >= 'M' && c <= 'O') return 7;
-        else if (c >= 'P' && c <= 'S') return 8;
-        else if (c >= 'T' && c <= 'V') return 9;
-        else if (c >= 'W' && c <= 'Z') return 10;
-        else return 0;
+
+        System.out.println(totalTime);
     }
 }
